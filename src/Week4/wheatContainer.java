@@ -1,40 +1,46 @@
+//Question 4 :
+
 package Week4;
 
 public class wheatContainer {
 
-    // sorting array
     static void forEachVillage(int array[]) {
+        // looping through the values of the array
         for (int i = 1; i < array.length; i++) {
             int j = i;
-            int a = array[i];
+            int a = array[i]; // storing the value of the current element in variable a
+            
+            // comparing the current element with the previous element
             while ((j > 0) && (array[j - 1] > a)) {
-                array[j] = array[j - 1];
-                j--;
+                array[j] = array[j - 1]; // swapping the current element with the previous element
+                j--; // decrement j
             }
-            array[j] = a;
+            array[j] = a;// assigning the current element to the index where the previous element was swapped                       // swapped
         }
     }
 
 
     //function to calculate the number of container required
     static void forCurrentVillage(int array[]){
-
-        //declaring variables
         int a;
-        int total_container = 0;
-        int previous_value = 0;
-        int forthisvillage = 0;
-
+        int total_container = 0; // total number of containers required.
+        int previous_value = 0; // store previous element of the current element
+        int forthisvillage = 0; // store container required for the current village
+        
+        // looping through the elements of the sorted array
         for (a = 0; a < array.length; a++) {
+            // execute if statement if the current element is not same as the previous element
             if (array[a] != previous_value) {
                 previous_value = array[a];
                 forthisvillage = forthisvillage + 1;
     
                 total_container = total_container  + forthisvillage;
-        } else {
+            } 
+            // execute else statement if the curret element is same as the previous element
+            else {
                 previous_value = array[a];
                 total_container = total_container + forthisvillage;
-        }
+            }
         }
 
         //printing the no of containers required
@@ -54,3 +60,4 @@ public class wheatContainer {
         forCurrentVillage(array);
     }
 }
+

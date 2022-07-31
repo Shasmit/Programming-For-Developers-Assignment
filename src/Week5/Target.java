@@ -1,3 +1,5 @@
+//Question 5 :
+
 package Week5;
 
 public class Target {
@@ -10,6 +12,7 @@ public class Target {
         //declaring a variable to store the no of times the word is found in the text
         int value = 0;
 
+        
         for (int i = 0; i < targetWord.length(); i++) {
             for (int j = 0; j < texts.length; j++) {
                 for (int k = 0; k < texts[j].length(); k++) {
@@ -37,10 +40,10 @@ public class Target {
     public static void main(String[] args) {
 
         //target word
-        String targetWord = "frost";
+        String targetWord = "frog";
 
         //array containing set of different words in the form of string 
-        String[] texts = { "program", "for", "developers" };
+        String[] texts = { "programming", "for", "developers"};
 
         //calling the subset function
         findSubset(targetWord, texts);
